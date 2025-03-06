@@ -7,10 +7,16 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Dependencies
 node_modules
+.pnp
+.pnp.js
+
+# Build
 dist
 dist-ssr
 *.local
+build
 
 # Editor directories and files
 .vscode/*
@@ -23,7 +29,7 @@ dist-ssr
 *.sln
 *.sw?
 
-# Environment variables
+# Environment
 .env
 .env.local
 .env.development.local
@@ -32,9 +38,10 @@ dist-ssr
 
 # Vercel
 .vercel
+.env*.local
+
+# TypeScript
+*.tsbuildinfo
 
 # Coverage
 coverage
-
-# Build
-build

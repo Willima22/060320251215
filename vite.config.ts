@@ -1,3 +1,5 @@
+/// <reference types="vite/client" />
+
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
@@ -8,14 +10,22 @@ export default defineConfig({
     exclude: ['lucide-react'],
   },
   build: {
+    minify: 'esbuild',
     sourcemap: true,
-    minify: 'terser',
     rollupOptions: {
       output: {
         manualChunks: {
           vendor: ['react', 'react-dom', 'react-router-dom'],
+          charts: ['chart.js', 'react-chartjs-2'],
+          utils: ['date-fns', 'uuid', 'zustand']
         },
       },
     },
+    target: 'esnext',
+    assetsDir: 'assets',
+  },
+  server: {
+    port: 3000,
   },
 });
+
